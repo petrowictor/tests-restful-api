@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","397","Create object","tests","Sat Sep 13 15:45:21 GMT 2025","passed","Sat Sep 13 15:45:22 GMT 2025","","test_objects","",""
+"","678","Delete object","tests","Sat Sep 13 15:45:25 GMT 2025","passed","Sat Sep 13 15:45:25 GMT 2025","","test_objects","",""
+"","476","Update object","tests","Sat Sep 13 15:45:23 GMT 2025","passed","Sat Sep 13 15:45:24 GMT 2025","","test_objects","",""
+"","328","Get object","tests","Sat Sep 13 15:45:22 GMT 2025","passed","Sat Sep 13 15:45:23 GMT 2025","","test_objects","",""
