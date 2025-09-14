@@ -1,3 +1,5 @@
 pytest_plugins = (
-    "fixtures.objId"
+    "fixtures.objId",
+    "fixtures.objects",
+    "fixtures.settings"
 )

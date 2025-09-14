@@ -1,11 +1,25 @@
 import allure
 import pytest
+from http import HTTPStatus
 
 from endpoints.create_object import CreateObject
 from endpoints.get_object import GetObject
 from endpoints.update_object import UpdateObject
 from endpoints.delete_object import DeleteObject
 
+from endpoints.objects_client import ObjectsClient
+from schema.objects import ObjectSchema
+from tools.assertions.base import assert_status_code
+
+class TestObjects:
+   @allure.title("Get operation")
+   def test_get_object(
+      self,
+      object_client: ObjectsClient,
+      function_operation: ObjectSchema
+    ):
+      response = object_client.get_object(function_operation.id)
+      assert_status_code(response.status_code, HTTPStatus.OK)
 
 @pytest.mark.objects
 @allure.title("Create object")
