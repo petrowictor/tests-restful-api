@@ -7,12 +7,12 @@ class ObjectsClient(BaseClient):
     """
     Клиент для взаимодействия с обЪктами.
     """
-    @allure.step("Get operation by id {operation_id}")
+    @allure.step("Get operation by id {id}")
     def get_object(self, id) -> Response:
         """
-        Получить операцию по идентификатору.
+        Получить обЪект по идентификатору.
 
-        :param operation_id: Идентификатор операции.
-        :return: Ответ от сервера с информацией об операции.
+        :param id: Идентификатор объекта.
+        :return: Ответ от сервера с информацией об объекте.
         """
-        return self.get(f"{APIRoutes.OPERATIONS}/{id}")
+        return self.get(f"{APIRoutes.OBJECTS}/{id}")
