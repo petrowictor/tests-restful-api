@@ -1,7 +1,25 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict, Field
 
-class ObjectSchema(BaseModel):
+class DataObjectSchema(BaseModel):
+    year: int
+    price: float
+    CPU_model: str = Field(default="Intel Core i9", alias="CPU model")
+    Hard_disk_size: str = Field(default="1 TB", alias="Hard disk size")
+
+class CreateObjectsSchema(BaseModel):
+    """
+    Модель для создания нового объекта.
+
+    """
+    model_config = ConfigDict(populate_by_name=True)
+
+    name: str = Field(default="Apple MacBook Pro 16")
+    data: DataObjectSchema
+
+
+class ObjectSchema(CreateObjectsSchema):
     """
     Модель объекта, содержащий ID.
+
     """
     id: str
