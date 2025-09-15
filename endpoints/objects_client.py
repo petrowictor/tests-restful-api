@@ -20,7 +20,7 @@ class ObjectsClient(BaseClient):
         return self.get(f"{APIRoutes.OBJECTS}/{id}")
     
     @allure.step("Create object")
-    def create_object(self, operation: CreateObjectsSchema) -> Response:
+    def create_object(self, object: CreateObjectsSchema) -> Response:
         """
         Создать операцию.
 
@@ -29,7 +29,7 @@ class ObjectsClient(BaseClient):
         """
         return self.post(
             APIRoutes.OBJECTS,
-            json=operation.model_dump(mode='json', by_alias=True)  # Сериализуем объект в JSON перед отправкой
+            json=object.model_dump(mode='json', by_alias=True)  # Сериализуем объект в JSON перед отправкой
         )
     
     @allure.step("Delete object by id {object_id}")
