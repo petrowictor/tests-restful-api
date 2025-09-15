@@ -14,7 +14,10 @@ class CreateObjectsSchema(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     name: str = Field(default="Apple MacBook Pro 16")
-    data: DataObjectSchema
+    data: DataObjectSchema = Field(
+        default=DataObjectSchema(),  # ← ✅ КЛЮЧЕВОЙ ШАГ: создаем экземпляр здесь!
+        description="Технические характеристики объекта"
+    )
 
 
 class ObjectSchema(CreateObjectsSchema):
