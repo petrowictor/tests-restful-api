@@ -26,4 +26,4 @@ def function_operation(object_client: ObjectsClient) -> ObjectSchema:
     object = object_client.create_object()
     yield object
 
-    object_client.delete_object(object.id)
+    object_client.delete_object_api(object.id)
