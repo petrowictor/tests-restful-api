@@ -23,7 +23,7 @@ def function_operation(object_client: ObjectsClient) -> ObjectSchema:
     :param objects_client: API-клиент для работы с объектами.
     :return: Создан тестовый объект.
     """
-    operation = object_client.create_operation()
+    operation = object_client.create_object()
     yield operation
 
-    object_client.delete_operation_api(operation.id)
+    object_client.delete_object(object.id)
