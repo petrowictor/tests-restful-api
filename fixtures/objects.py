@@ -16,14 +16,14 @@ def object_client(settings: Settings) -> ObjectsClient:
 
 
 @pytest.fixture
-def function_operation(objects_client: ObjectsClient) -> ObjectSchema:
+def function_operation(object_client: ObjectsClient) -> ObjectSchema:
     """
     Фикстура создаёт тестовый объект и удаляет его после выполнения теста.
     
     :param objects_client: API-клиент для работы с объектами.
     :return: Создан тестовый объект.
     """
-    operation = objects_client.create_operation()
+    operation = object_client.create_operation()
     yield operation
 
-    objects_client.delete_operation_api(operation.id)
+    object_client.delete_operation_api(operation.id)
