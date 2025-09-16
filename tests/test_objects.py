@@ -18,7 +18,7 @@ class TestObjects:
       object_client: ObjectsClient,
       function_operation: ObjectSchema
     ):
-      response = object_client.get_object(function_operation.id)
+      response = object_client.get_object_api(function_operation.id)
       assert_status_code(response.status_code, HTTPStatus.OK)
 
 @pytest.mark.objects
