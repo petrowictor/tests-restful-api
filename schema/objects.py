@@ -15,7 +15,7 @@ class CreateObjectsSchema(BaseModel):
 
     name: str = Field(default="Apple MacBook Pro 16")
     data: DataObjectSchema = Field(
-        default=DataObjectSchema(),  # ← ✅ КЛЮЧЕВОЙ ШАГ: создаем экземпляр здесь!
+        default=DataObjectSchema(),
         description="Технические характеристики объекта"
     )
 
