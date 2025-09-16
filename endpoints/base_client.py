@@ -3,7 +3,7 @@ from typing import Any
 import allure
 from httpx import Client, URL, Response, QueryParams
 from httpx._types import RequestData, RequestFiles
-from event_hooks import log_request_event_hook, log_response_event_hook
+from endpoints.event_hooks import log_request_event_hook, log_response_event_hook
 
 from config import HTTPClientConfig
 
