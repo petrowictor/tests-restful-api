@@ -3,6 +3,7 @@ from typing import Any
 import allure
 from httpx import Client, URL, Response, QueryParams
 from httpx._types import RequestData, RequestFiles
+from event_hooks import log_request_event_hook, log_response_event_hook
 
 from config import HTTPClientConfig
 
@@ -85,5 +86,9 @@ def get_http_client(config: HTTPClientConfig) -> Client:
     """
     return Client(
         timeout=config.timeout,
-        base_url=config.client_url
+        base_url=config.client_url,
+        event_hooks={
+            "request": [log_request_event_hook],  # Логирование перед запросом
+            "response": [log_response_event_hook]  # Логирование после ответа
+        }
     )
